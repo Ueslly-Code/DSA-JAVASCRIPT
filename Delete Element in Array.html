@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Delete Element in Array</title>
+    <script>
+      function removeEl() {
+        // Define an initial array with some values
+        let data = [15, 10, 66, 76, 40, 60, 85];
+
+        // Get the position from the input field and convert it to an integer
+        let position = document.getElementById("position").value;
+        position = parseInt(position);
+
+        // Loop through the array from the given position to shift elements to the left
+        for (let i = position; i < data.length - 1; i++) {
+          data[i] = data[i + 1]; // Move the next element to the current position
+        }
+
+        // Reduce the array length to remove the last duplicate element
+        data.length = data.length - 1;
+
+        // Display the updated array in the console
+        console.warn("Updated Array after deletion:", data);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Input field to enter the position of the element to be deleted -->
+    <input type="text" id="position" placeholder="Enter position" />
+
+    <!-- Button to trigger the delete function -->
+    <button onclick="removeEl()">Remove Element</button>
+  </body>
+</html>
