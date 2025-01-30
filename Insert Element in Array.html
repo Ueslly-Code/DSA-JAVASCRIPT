@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Insert Element in Array</title>
+    <script>
+      function insertEl() {
+        // Define an initial array with some values
+        let data = [60, 30, 10, 67, 40];
+
+        // Get the new element from the input field and convert it to an integer
+        let newEl = document.getElementById('newEl').value;
+        newEl = parseInt(newEl);
+
+        // Get the position where the new element should be inserted
+        let position = document.getElementById('position').value;
+        position = parseInt(position); // Ensure position is treated as an integer
+
+        console.warn("Original Array:", data); // Display the original array in the console
+
+        // Loop through the array in reverse order to shift elements
+        for (let i = data.length - 1; i >= 0; i--) {
+          if (i >= position) {
+            // Shift elements to the right
+            data[i + 1] = data[i];
+
+            // Insert the new element at the specified position
+            if (i == position) {
+              data[i] = newEl;
+            }
+          }
+        }
+
+        console.warn("Updated Array:", data); // Display the updated array in the console
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Input field to enter the position where the new element will be inserted -->
+    <input type="text" id="position" placeholder="Enter position" />
+
+    <!-- Input field to enter the new element -->
+    <input type="text" id="newEl" placeholder="Enter new element" />
+
+    <!-- Button to trigger the insertion function -->
+    <button onclick="insertEl()">Insert</button>
+  </body>
+</html>
