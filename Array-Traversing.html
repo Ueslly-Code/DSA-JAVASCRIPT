@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array Traversing</title>
+    <script>
+      // Declare an array with some numbers
+      let data = [6, 11, 25, 7, 20, 5, 80, 4, 32, 69, 98, 47, 5, 8, 18];
+
+      // Function to get an element from the array based on user input
+      function getElement() {
+        // Get the value entered by the user in the input field
+        let el = document.getElementById("element").value;
+
+        // Check if the entered value is a valid index in the array
+        if (el < data.length && typeof parseInt(el) === "number") {
+          // Display the corresponding array element in an alert box
+          alert(data[el]);
+        } else {
+          // Show an error message if the input is invalid
+          alert("Please enter valid input");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Input field to enter the index number -->
+    <input type="text" id="element" />
+    <!-- Button to trigger the function and get the element -->
+    <button onclick="getElement()">Get Element</button>
+  </body>
+</html>
