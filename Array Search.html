@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Search Element in Array</title>
+    <script>
+        function searchElement(){
+            // Define an array of numbers
+            let data = [9, 80, 35, 17, 37, 99, 89, 66];
+
+            // Get the value entered in the input field
+            let item = document.getElementById('searchEl').value;
+
+            // Initialize index as undefined (to store the index of the found item)
+            let index = undefined;
+
+            // Loop through the array to search for the item
+            for(i = 0; i <= data.length - 1; i++){
+                // Convert the input value to an integer and compare with array elements
+                if(data[i] === parseInt(item)) {
+                    index = i;  // Store the index if item is found
+                    break;  // Exit the loop once the item is found
+                }
+            }
+
+            // Log the index of the searched element (if found)
+            console.warn(index);
+        }
+    </script>
+  </head>
+  <body>
+    <!-- Input field for entering the value to search -->
+    <input type="text" placeholder="Enter value" id="searchEl">
+
+    <!-- Button to trigger the search function -->
+    <button onclick="searchElement()">Search Element</button>
+  </body>
+</html>
