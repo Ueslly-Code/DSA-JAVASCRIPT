@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Merge Two Arrays</title>
+    <script>
+      // Define the first array
+      let data = [11, 22, 33, 44, 55, 66];
+
+      // Define the second array
+      let data2 = [77, 88, 99, 100];
+
+      // Create an empty array to store the merged result
+      let data3 = [];
+
+      // Copy elements of the first array into data3
+      for (i = 0; i < data.length; i++) {
+        data3[i] = data[i];
+      }
+
+      // Copy elements of the second array into data3 after the first array's elements
+      for (i = 0; i < data2.length; i++) {
+        data3[data.length + i] = data2[i];
+      }
+
+      // Log the merged array in the console
+      console.warn(data3);
+    </script>
+  </head>
+  <body></body>
+</html>
