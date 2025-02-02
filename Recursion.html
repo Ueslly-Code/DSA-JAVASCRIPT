@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Recursion</title>
+  
+  <!-- Linking external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <script>
+    /*
+    Recursion Example 1 (Counting using recursion):
+
+    function apple(x) {
+      console.warn(x); // Print the current value of x
+      
+      if (x < 10) { // Base case: Stop recursion when x reaches 10
+      x++
+        apple(x); // Recursive call with x incremented by 1
+      }
+    }
+
+    let data = 0; // Initial value for recursion
+    apple(data); 
+    */
+
+    // Function to calculate factorial using recursion
+    function factorial(data) {
+      if (data == 0) {  // Base case: factorial of 0 is 1
+        return 1;
+      }
+      return data * factorial(data - 1); // Recursive call with (data - 1)
+    }
+
+    let data = 7; // Input number to find factorial
+    console.warn(factorial(data)); // Display the factorial result in console
+  </script>
+</body>
+</html>
