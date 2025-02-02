@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Array Sorting</title>
+  
+  <!-- Linking external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <script>
+    // Defining an array of numbers
+    let data = [30, 49, 1, 19, 17, 98, 76, 45, 80, 99];
+
+    // Implementing Bubble Sort algorithm to sort the array in ascending order
+    for (let i = 0; i < data.length; i++) { 
+      for (let j = 0; j < data.length - 1; j++) { // "-1" to avoid accessing undefined index
+        // Comparing adjacent elements and swapping if they are in the wrong order
+        if (data[j] > data[j + 1]) {
+          let temp = data[j];    // Storing the larger value in a temporary variable
+          data[j] = data[j + 1]; // Swapping values
+          data[j + 1] = temp;    // Placing the larger value at the next position
+        }
+      }
+    }
+
+    // Displaying the sorted array in the console
+    console.warn(data);
+  </script>
+</body>
+</html>
