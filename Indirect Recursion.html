@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Indirect Recursion</title>
+    <script>
+       // Initial amount of money
+       let money = 100; 
+
+       // Variable to count total pens purchased
+       let totalPen = 0;
+
+       // Function to buy a pen
+       function buyPen(x) {
+         if (x > 0) { // Check if there is still money left
+           console.warn("I have", x, "RS", totalPen); // Print current money and pens count
+           buyMore(x - 5); // Call another function to buy more pens, reducing money by 5
+         } else {
+           console.warn("I don't have more money", totalPen); // Stop recursion when money is finished
+         }
+      }
+
+       // Function to increment the number of pens and call buyPen() again
+       function buyMore(x) {
+        totalPen++; // Increase the total pen count
+        buyPen(x - 5); // Call buyPen with reduced money
+      }
+
+       // Start the recursive process
+       buyPen(money);
+  
+    </script>
+  </head>
+  <body>
+    <h1>Indirect Recursion</h1>
+  </body>
+</html>
