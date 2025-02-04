@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Head And Tail Recursion</title>
+</head>
+
+<body>
+<h1>Head And Tail Recursion</h1>
+
+<script>
+  
+  // Simple function call chain (not recursion)
+  function Day() {
+    let data = 56;
+    console.warn(data); // Logs 20 to the console as a warning
+  }
+
+  function week() {
+    Day(); // Calls Day function
+  }
+
+  function month() {
+    week(); // Calls week function
+  }
+
+  function Year() {
+    month(); // Calls month function
+  }
+
+  // Calls Year function, triggering a chain of function calls
+  Year();
+  
+ /*
+  // Recursive function demonstrating head and tail recursion
+  function test(x) {
+    // Head Recursion: If you uncomment this, the value is printed before the recursive call
+    // console.warn(x); 
+
+    if (x > 0) {
+      test(x - 1); // Recursive call happens before any further operations (head recursion)
+    }
+
+    // Tail Recursion: If you uncomment this, the value is printed after the recursive call
+     // console.warn(x); 
+  }
+
+  let data = 5;
+  test(data); // Calls the recursive function with an initial value of 5
+  */
+</script>
+
+</body>
+</html>
