@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recursion Array With Reverse</title>
+</head>
+
+<body>
+  
+  <script>
+    // Define an array with some integer values
+    let data = [10, 15, 20, 25, 35, 45, 50]; 
+    let temp; // Temporary variable for swapping elements
+
+    // Function to reverse an array using recursion
+    function Reverse(data, Start, End) {
+      console.warn(data); // Log the current state of the array at each step
+
+      // Base condition: If Start index is greater than End, stop recursion
+      if (Start <= End) {
+        // Swap the elements at Start and End positions
+        temp = data[Start];
+        data[Start] = data[End];
+        data[End] = temp;
+
+        // Recursively call the function for the next pair of elements
+        Reverse(data, Start + 1, End - 1);
+      }
+    }
+
+    // Call the function to reverse the array
+    Reverse(data, 0, data.length - 1);
+    
+  </script>
+  
+  <h1>Recursion Array With Reverse</h1>
+</body>
+</html>
