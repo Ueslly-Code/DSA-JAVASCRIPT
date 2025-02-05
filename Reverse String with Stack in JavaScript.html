@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reverse String with Stack in JavaScript</title>
+</head>
+
+<body>
+
+<script>
+  // Initialize an empty array to act as a stack
+  let data = [];
+  let currentSize = data.length; // Track the current size of the stack
+
+  // Function to push a new value onto the stack
+  function push(newVal) {
+    data[currentSize] = newVal; // Add new value at the currentSize index
+    currentSize += 1; // Increase the stack size
+  }
+
+  // Function to pop a value from the stack
+  function pop() {
+    lastRemovedItem = data[currentSize - 1]; // Store the last item
+    currentSize -= 1; // Decrease the stack size
+    data.length = currentSize; // Adjust the length of the array
+    return lastRemovedItem; // Return the removed item
+  }
+
+  // Function to reverse a string using a stack
+  function ReverseStr(item) {
+    // Push each character onto the stack
+    for (let i = 0; i < item.length; i++) {
+      push(item[i]);
+    }
+
+    // Pop each character from the stack to reverse the string
+    for (let i = 0; i < item.length; i++) {
+      item[i] = pop();
+    }
+  }
+
+  let str = "Aniket";
+  str = str.split(""); // Convert string to an array of characters
+  ReverseStr(str); // Call function to reverse the string
+  console.warn(str.join("")); // Convert array back to string and print
+
+  // console.warn("Stack", data); // Uncomment to see the stack after operation
+</script>
+
+<h1>Reverse String With Stack in JavaScript</h1>
+
+</body>
+</html>
