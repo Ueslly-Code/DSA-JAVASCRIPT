@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stack with Class in JavaScript</title>
+
+  <script>
+    // Define a Stack class to implement stack functionality
+    class Stack {
+      item = []; // Array to store stack elements
+      currentSize; // Variable to track the current size of the stack
+      maxSize; // Maximum size of the stack
+
+      // Constructor to initialize the stack with a maximum size
+      constructor(size) {
+        this.maxSize = size; // Set the maximum size
+        this.currentSize = this.item.length; // Initialize current size as 0
+      }
+
+      // Method to push a new value onto the stack
+      push(newVal) {
+        if (this.currentSize >= this.maxSize) {
+          alert("Stack is full"); // Alert if stack is full
+        } else {
+          this.item[this.currentSize] = newVal; // Add the new value
+          this.currentSize++; // Increase stack size
+        }
+      }
+
+      // Method to pop (remove) an element from the stack
+      pop() {
+        if (this.currentSize > 0) {
+          this.currentSize--; // Decrease stack size
+          this.item.length = this.currentSize; // Adjust array length
+        } else {
+          alert("Stack is already empty"); // Alert if stack is empty
+        }
+      }
+
+      // Method to display the current elements in the stack
+      display() {
+        console.warn(this.item); // Log the stack elements
+      }
+    }
+
+    // Create a new stack instance with a maximum size of 5
+    st1 = new Stack(5);
+
+    // Example usage (uncomment to test)
+    // st1.push(19); // Push 19 into the stack
+    // st1.display(); // Display stack contents
+
+  </script>
+</head>
+
+<body>
+
+  <h1>Stack with Class in JavaScript</h1>
+
+</body>
+</html>
