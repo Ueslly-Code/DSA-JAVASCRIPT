@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reverse String with Class Stcak in JavaScript</title>
+</head>
+
+<body>
+
+<script>
+  // Define a Stack class to handle push and pop operations
+  class Stack {
+    constructor() {
+      this.data = []; // Array to store stack elements
+      this.currentSize = 0; // Variable to track the current size of the stack
+    }
+
+    // Method to push a new value onto the stack
+    push(newVal) {
+      this.data[this.currentSize] = newVal; // Add new value at the current index
+      this.currentSize++; // Increase stack size
+    }
+
+    // Method to pop a value from the stack
+    pop() {
+      if (this.currentSize > 0) {
+        this.currentSize--; // Decrease stack size
+        return this.data.pop(); // Remove and return the last element
+      }
+      return null; // Return null if the stack is empty
+    }
+  }
+
+  // Function to reverse a string using the Stack class
+  function reverseString(str) {
+    let stack = new Stack(); // Create a new stack instance
+    let charArray = str.split(""); // Convert string to an array of characters
+
+    // Push each character onto the stack
+    for (let i = 0; i < charArray.length; i++) {
+      stack.push(charArray[i]);
+    }
+
+    // Pop each character from the stack to reverse the string
+    for (let i = 0; i < charArray.length; i++) {
+      charArray[i] = stack.pop();
+    }
+
+    return charArray.join(""); // Convert array back to string
+  }
+
+  let str = "Aniket";
+  let reversedStr = reverseString(str); // Reverse the string
+  console.warn(reversedStr); // Print the reversed string
+</script>
+
+<h1>Reverse String With Class Stack in JavaScript</h1>
+
+</body>
+</html>
